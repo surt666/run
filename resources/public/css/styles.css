@@ -1,0 +1,17 @@
+.green {background-color:green;width:80px;height:17px;margin:10px}
+
+.red {background-color:red;width:80px;height:17px;margin:10px}
+
+.yellow {background-color:yellow;width:80px;height:17px;margin:10px}
+
+.grey {background-color:grey;width:80px;height:17px;margin:10px}
+
+.project {border:solid black 2px;margin:20px}
+
+.name {margin:10px;}
+
+/*.spacer {height:23px}*/
+
+a:link {color:black}
+
+a:visited {color:black}
