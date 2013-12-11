@@ -1,4 +1,4 @@
-(ns runread.core-test
+(ns run.core-test
   (:require [clojure.test :refer :all]
             [runread.core :refer :all]))
 

@@ -1,4 +1,4 @@
-(ns runread.core
+(ns run.core
   (:require [ajax.core :refer [GET POST]]
             [domina :as d]
             [goog.Timer :as timer]
@@ -14,21 +14,22 @@
 
 (defn build-html [data]
   (let [main-div (dx/xpath "//div[@id='main']")]
-    (d/append! main-div (str "<div class=\"project medium-7 columns\">
-                               <div class=\"name row\"><a href=\"project.html?project=" (get data "project") "\">" (get data "project") "</a></div>
+    (d/append! main-div (str "<div class=\"project small-6 columns\">
+                               <div class=\"name row\">
+                                 <div class=\"small-12 columns\">
+                                   <a href=\"project.html?project=" (get data "project") "\">" (get data "project") "</a></div>
+                                 </div>
                                <div class=\"row\">
-                                 <div title=\"build\" class=\"small-1 columns " (convert-state (get data "build")) "\"></div>
-                                 <div class=\"spacer\"></div>
-                                 <div title=\"deploy\" class=\"small-1 columns " (convert-state (get data "deploy")) "\"></div>
-                                 <div class=\"spacer\"></div>
-                                 <div title=\"test\" class=\"small-1 columns " (convert-state (get data "test")) "\"></div>
-                                 <div class=\"spacer\"><a href=\"#\" onclick=\"runread.core.forcedeploy('" (get data "project") "','" "preprod" "');\">-></a></div>
-                                 <div title=\"preprod\" class=\"small-1 columns " (convert-state (get data "preprod")) "\"></div>
-                                 <div class=\"spacer\"><a href=\"#\" onclick=\"runread.core.forcedeploy('" (get data "project") "','" "production" "');\">-></a></div>
-                                 <div title=\"prod\" class=\"small-1 columns " (convert-state (get data "prod")) "\"></div>
+                                 <div title=\"build\" class=\"small-2 columns " (convert-state (get data "build")) "\"></div>
+                                 <div title=\"deploy\" class=\"small-2 columns " (convert-state (get data "deploy")) "\"></div>
+                                 <div title=\"test\" class=\"small-2 columns " (convert-state (get data "test")) "\"></div>
+                                 <div class=\"small-1 columns\"><a href=\"#\" title=\"deploy preprod\"  onclick=\"run.core.forcedeploy('" (get data "project") "','" "preprod" "');\">-></a></div>
+                                 <div title=\"preprod\" class=\"small-2 columns " (convert-state (get data "preprod")) "\"></div>
+                                 <div class=\"small-1 columns\"><a href=\"#\" title=\"deploy prod\" onclick=\"run.core.forcedeploy('" (get data "project") "','" "production" "');\">-></a></div>
+                                 <div title=\"prod\" class=\"small-2 columns " (convert-state (get data "prod")) "\"></div>
                                </div>
                                <div class=\"row\">
-                                 <div class=\"small-2 columns\"><a href=\"#\" onclick=\"runread.core.forcebuild('" (get data "project") "');\">Play</a></div>
+                                 <div class=\"small-12 columns\"><a href=\"#\" onclick=\"run.core.forcebuild('" (get data "project") "');\">Play</a></div>
                                </div>
                               </div>"))))
 
@@ -41,7 +42,7 @@
   (.log js/console (str "something bad happened: " status " " status-text)))
 
 (defn get-data []
-  (GET "/runread/readstatus" {:handler handler
+  (GET "/run/readstatus" {:handler handler
                               :error-handler error-handler
                               :response-format :json}))
 
@@ -59,7 +60,7 @@
 (defn build-project-html [data]
   (let [main-div (dx/xpath "//div[@id='main']")]
     (d/append! main-div (str "<div class=\"row\">
-                                 <div title=\"build\" class=\"small-4 columns " (convert-status (get data "status")) "\"><a href=\"#\" onclick=\"runread.core.showtest('" (get data "project") "','" (get data "buildnr") "');\">" (get data "buildnr") "</a></div>"))))
+                                 <div title=\"build\" class=\"small-4 columns " (convert-status (get data "status")) "\"><a href=\"#\" onclick=\"run.core.showtest('" (get data "project") "','" (get data "buildnr") "');\">" (get data "buildnr") "</a></div>"))))
 
 (defn handler2 [response]
   (d/destroy-children! (dx/xpath "//div[@id='main']"))
@@ -69,7 +70,7 @@
 (defn ^:export projectread []
   (let [p js/window.location.search
         p (second (clojure.string/split p #"="))]
-    (GET (str "/runread/project/" p) {:handler handler2
+    (GET (str "/run/project/" p) {:handler handler2
                                       :error-handler error-handler
                                       :response-format :json})))
 
@@ -79,14 +80,14 @@
   (.log js/console (get response "test")))
 
 (defn ^:export showtest [project buildnr]
-  (GET (str "/runread/showtest/" project "/" buildnr) {:handler handler3
+  (GET (str "/run/showtest/" project "/" buildnr) {:handler handler3
                                                        :error-handler error-handler
                                                        :response-format :json}))
 
 (defn ^:export forcebuild [project]
-  (GET (str "/runread/forcebuild/" project) {:error-handler error-handler
+  (GET (str "/run/forcebuild/" project) {:error-handler error-handler
                                              :response-format :json}))
 
 (defn ^:export forcedeploy [project env]
-  (GET (str "/runread/forcedeploy/" project "/" env) {:error-handler error-handler
+  (GET (str "/run/forcedeploy/" project "/" env) {:error-handler error-handler
                                              :response-format :json}))

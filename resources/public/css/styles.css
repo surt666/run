@@ -1,10 +1,10 @@
-.green {background-color:green;width:80px;height:17px;margin:10px}
+.green {background-color:green;max-width:74px;height:17px;margin:4px}
 
-.red {background-color:red;width:80px;height:17px;margin:10px}
+.red {background-color:red;max-width:74px;height:17px;margin:4px}
 
-.yellow {background-color:yellow;width:80px;height:17px;margin:10px}
+.yellow {background-color:yellow;max-width:74px;height:17px;margin:4px}
 
-.grey {background-color:grey;width:80px;height:17px;margin:10px}
+.grey {background-color:grey;max-width:74px;height:17px;margin:4px}
 
 .project {border:solid black 2px;margin:20px}
 

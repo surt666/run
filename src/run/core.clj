@@ -1,4 +1,4 @@
-(ns runread.core
+(ns run.core
   (:require [me.raynes.fs :as fs]
             [me.raynes.fs.compression :as fsc]
             [cheshire.core :refer :all]))
@@ -10,7 +10,7 @@
         deploy (str (first (slurp (str root dir "/deploy_flag"))))
         test (str (first (slurp (str root dir "/test_flag"))))
         preprod (str (first (slurp (str root dir "/preprod_flag"))))
-        prod (str (first (slurp (str root dir "/prod_flag"))))]
+        prod (str (first (slurp (str root dir "/production_flag"))))]
     {:project dir
      :build build
      :deploy deploy
@@ -45,5 +45,5 @@
   (clojure.java.shell/sh "ansible-playbook" "-i" "ci" "build.yml" "--extra-vars" (str "project=" project) :dir "/home/m00522/playbooks"))
 
 (defn force-deploy [project env]
-  (spit (str root project "/latest") "1")
+  (spit (str root project "/" env "_flag") "2")
   (clojure.java.shell/sh "ansible-playbook" "-i" env "deploy.yml" "--extra-vars" (str "project=" project) :dir "/home/m00522/playbooks"))

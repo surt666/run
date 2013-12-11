@@ -33686,7 +33686,7 @@ domina.xpath.xpath = function() {
   xpath.cljs$core$IFn$_invoke$arity$2 = xpath__2;
   return xpath
 }();
-goog.provide("runread.core");
+goog.provide("run.core");
 goog.require("cljs.core");
 goog.require("ajax.core");
 goog.require("domina.xpath");
@@ -33698,105 +33698,105 @@ goog.require("goog.Timer");
 goog.require("domina");
 goog.require("domina");
 goog.require("ajax.core");
-runread.core.convert_state = function convert_state(state) {
-  var pred__6226 = cljs.core._EQ_;
-  var expr__6227 = state;
-  if(cljs.core.truth_(pred__6226.call(null, "0", expr__6227))) {
+run.core.convert_state = function convert_state(state) {
+  var pred__6413 = cljs.core._EQ_;
+  var expr__6414 = state;
+  if(cljs.core.truth_(pred__6413.call(null, "0", expr__6414))) {
     return"green"
   }else {
-    if(cljs.core.truth_(pred__6226.call(null, "1", expr__6227))) {
+    if(cljs.core.truth_(pred__6413.call(null, "1", expr__6414))) {
       return"red"
     }else {
-      if(cljs.core.truth_(pred__6226.call(null, "2", expr__6227))) {
+      if(cljs.core.truth_(pred__6413.call(null, "2", expr__6414))) {
         return"yellow"
       }else {
-        if(cljs.core.truth_(pred__6226.call(null, "4", expr__6227))) {
+        if(cljs.core.truth_(pred__6413.call(null, "4", expr__6414))) {
           return"grey"
         }else {
-          throw new Error([cljs.core.str("No matching clause: "), cljs.core.str(expr__6227)].join(""));
+          throw new Error([cljs.core.str("No matching clause: "), cljs.core.str(expr__6414)].join(""));
         }
       }
     }
   }
 };
-runread.core.build_html = function build_html(data) {
+run.core.build_html = function build_html(data) {
   var main_div = domina.xpath.xpath.call(null, "//div[@id\x3d'main']");
-  return domina.append_BANG_.call(null, main_div, [cljs.core.str('\x3cdiv class\x3d"project medium-7 columns"\x3e\n                               \x3cdiv class\x3d"name row"\x3e\x3ca href\x3d"project.html?project\x3d'), cljs.core.str(cljs.core.get.call(null, data, "project")), cljs.core.str('"\x3e'), cljs.core.str(cljs.core.get.call(null, data, "project")), cljs.core.str('\x3c/a\x3e\x3c/div\x3e\n                               \x3cdiv class\x3d"row"\x3e\n                                 \x3cdiv title\x3d"build" class\x3d"small-1 columns '), 
-  cljs.core.str(runread.core.convert_state.call(null, cljs.core.get.call(null, data, "build"))), cljs.core.str('"\x3e\x3c/div\x3e\n                                 \x3cdiv class\x3d"spacer"\x3e\x3c/div\x3e\n                                 \x3cdiv title\x3d"deploy" class\x3d"small-1 columns '), cljs.core.str(runread.core.convert_state.call(null, cljs.core.get.call(null, data, "deploy"))), cljs.core.str('"\x3e\x3c/div\x3e\n                                 \x3cdiv class\x3d"spacer"\x3e\x3c/div\x3e\n                                 \x3cdiv title\x3d"test" class\x3d"small-1 columns '), 
-  cljs.core.str(runread.core.convert_state.call(null, cljs.core.get.call(null, data, "test"))), cljs.core.str('"\x3e\x3c/div\x3e\n                                 \x3cdiv class\x3d"spacer"\x3e\x3ca href\x3d"#" onclick\x3d"runread.core.forcedeploy(\''), cljs.core.str(cljs.core.get.call(null, data, "project")), cljs.core.str("','"), cljs.core.str("preprod"), cljs.core.str('\');"\x3e-\x3e\x3c/a\x3e\x3c/div\x3e\n                                 \x3cdiv title\x3d"preprod" class\x3d"small-1 columns '), 
-  cljs.core.str(runread.core.convert_state.call(null, cljs.core.get.call(null, data, "preprod"))), cljs.core.str('"\x3e\x3c/div\x3e\n                                 \x3cdiv class\x3d"spacer"\x3e\x3ca href\x3d"#" onclick\x3d"runread.core.forcedeploy(\''), cljs.core.str(cljs.core.get.call(null, data, "project")), cljs.core.str("','"), cljs.core.str("production"), cljs.core.str('\');"\x3e-\x3e\x3c/a\x3e\x3c/div\x3e\n                                 \x3cdiv title\x3d"prod" class\x3d"small-1 columns '), 
-  cljs.core.str(runread.core.convert_state.call(null, cljs.core.get.call(null, data, "prod"))), cljs.core.str('"\x3e\x3c/div\x3e\n                               \x3c/div\x3e\n                               \x3cdiv class\x3d"row"\x3e\n                                 \x3cdiv class\x3d"small-2 columns"\x3e\x3ca href\x3d"#" onclick\x3d"runread.core.forcebuild(\''), cljs.core.str(cljs.core.get.call(null, data, "project")), cljs.core.str("');\"\x3ePlay\x3c/a\x3e\x3c/div\x3e\n                               \x3c/div\x3e\n                              \x3c/div\x3e")].join(""))
+  return domina.append_BANG_.call(null, main_div, [cljs.core.str('\x3cdiv class\x3d"project small-6 columns"\x3e\n                               \x3cdiv class\x3d"name row"\x3e\n                                 \x3cdiv class\x3d"small-12 columns"\x3e\n                                   \x3ca href\x3d"project.html?project\x3d'), cljs.core.str(cljs.core.get.call(null, data, "project")), cljs.core.str('"\x3e'), cljs.core.str(cljs.core.get.call(null, data, "project")), cljs.core.str('\x3c/a\x3e\x3c/div\x3e\n                                 \x3c/div\x3e\n                               \x3cdiv class\x3d"row"\x3e\n                                 \x3cdiv title\x3d"build" class\x3d"small-2 columns '), 
+  cljs.core.str(run.core.convert_state.call(null, cljs.core.get.call(null, data, "build"))), cljs.core.str('"\x3e\x3c/div\x3e\n                                 \x3cdiv title\x3d"deploy" class\x3d"small-2 columns '), cljs.core.str(run.core.convert_state.call(null, cljs.core.get.call(null, data, "deploy"))), cljs.core.str('"\x3e\x3c/div\x3e\n                                 \x3cdiv title\x3d"test" class\x3d"small-2 columns '), cljs.core.str(run.core.convert_state.call(null, cljs.core.get.call(null, 
+  data, "test"))), cljs.core.str('"\x3e\x3c/div\x3e\n                                 \x3cdiv class\x3d"small-1 columns"\x3e\x3ca href\x3d"#" title\x3d"deploy preprod"  onclick\x3d"run.core.forcedeploy(\''), cljs.core.str(cljs.core.get.call(null, data, "project")), cljs.core.str("','"), cljs.core.str("preprod"), cljs.core.str('\');"\x3e-\x3e\x3c/a\x3e\x3c/div\x3e\n                                 \x3cdiv title\x3d"preprod" class\x3d"small-2 columns '), cljs.core.str(run.core.convert_state.call(null, 
+  cljs.core.get.call(null, data, "preprod"))), cljs.core.str('"\x3e\x3c/div\x3e\n                                 \x3cdiv class\x3d"small-1 columns"\x3e\x3ca href\x3d"#" title\x3d"deploy prod" onclick\x3d"run.core.forcedeploy(\''), cljs.core.str(cljs.core.get.call(null, data, "project")), cljs.core.str("','"), cljs.core.str("production"), cljs.core.str('\');"\x3e-\x3e\x3c/a\x3e\x3c/div\x3e\n                                 \x3cdiv title\x3d"prod" class\x3d"small-2 columns '), cljs.core.str(run.core.convert_state.call(null, 
+  cljs.core.get.call(null, data, "prod"))), cljs.core.str('"\x3e\x3c/div\x3e\n                               \x3c/div\x3e\n                               \x3cdiv class\x3d"row"\x3e\n                                 \x3cdiv class\x3d"small-12 columns"\x3e\x3ca href\x3d"#" onclick\x3d"run.core.forcebuild(\''), cljs.core.str(cljs.core.get.call(null, data, "project")), cljs.core.str("');\"\x3ePlay\x3c/a\x3e\x3c/div\x3e\n                               \x3c/div\x3e\n                              \x3c/div\x3e")].join(""))
 };
-runread.core.handler = function handler(response) {
+run.core.handler = function handler(response) {
   domina.destroy_children_BANG_.call(null, domina.xpath.xpath.call(null, "//div[@id\x3d'main']"));
-  cljs.core.mapv.call(null, function(p1__6229_SHARP_) {
-    return runread.core.build_html.call(null, p1__6229_SHARP_)
+  cljs.core.mapv.call(null, function(p1__6416_SHARP_) {
+    return run.core.build_html.call(null, p1__6416_SHARP_)
   }, response);
   return console.log([cljs.core.str(response)].join(""))
 };
-runread.core.error_handler = function error_handler(p__6230) {
-  var map__6232 = p__6230;
-  var map__6232__$1 = cljs.core.seq_QMARK_.call(null, map__6232) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6232) : map__6232;
-  var status_text = cljs.core.get.call(null, map__6232__$1, new cljs.core.Keyword(null, "status-text", "status-text", 4371493274));
-  var status = cljs.core.get.call(null, map__6232__$1, new cljs.core.Keyword(null, "status", "status", 4416389988));
+run.core.error_handler = function error_handler(p__6417) {
+  var map__6419 = p__6417;
+  var map__6419__$1 = cljs.core.seq_QMARK_.call(null, map__6419) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6419) : map__6419;
+  var status_text = cljs.core.get.call(null, map__6419__$1, new cljs.core.Keyword(null, "status-text", "status-text", 4371493274));
+  var status = cljs.core.get.call(null, map__6419__$1, new cljs.core.Keyword(null, "status", "status", 4416389988));
   return console.log([cljs.core.str("something bad happened: "), cljs.core.str(status), cljs.core.str(" "), cljs.core.str(status_text)].join(""))
 };
-runread.core.get_data = function get_data() {
-  return ajax.core.GET.call(null, "/runread/readstatus", new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "handler", "handler", 1706707644), runread.core.handler, new cljs.core.Keyword(null, "error-handler", "error-handler", 1866823671), runread.core.error_handler, new cljs.core.Keyword(null, "response-format", "response-format", 4250805877), new cljs.core.Keyword(null, "json", "json", 1017176154)], null))
+run.core.get_data = function get_data() {
+  return ajax.core.GET.call(null, "/run/readstatus", new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "handler", "handler", 1706707644), run.core.handler, new cljs.core.Keyword(null, "error-handler", "error-handler", 1866823671), run.core.error_handler, new cljs.core.Keyword(null, "response-format", "response-format", 4250805877), new cljs.core.Keyword(null, "json", "json", 1017176154)], null))
 };
-runread.core.poll = function poll() {
+run.core.poll = function poll() {
   var timer = new goog.Timer(2E3);
-  runread.core.get_data.call(null);
+  run.core.get_data.call(null);
   timer.start();
-  return goog.events.listen(timer, goog.Timer.TICK, runread.core.get_data)
+  return goog.events.listen(timer, goog.Timer.TICK, run.core.get_data)
 };
-goog.exportSymbol("runread.core.poll", runread.core.poll);
-runread.core.convert_status = function convert_status(status) {
-  var pred__6236 = cljs.core._EQ_;
-  var expr__6237 = status;
-  if(cljs.core.truth_(pred__6236.call(null, "success", expr__6237))) {
+goog.exportSymbol("run.core.poll", run.core.poll);
+run.core.convert_status = function convert_status(status) {
+  var pred__6423 = cljs.core._EQ_;
+  var expr__6424 = status;
+  if(cljs.core.truth_(pred__6423.call(null, "success", expr__6424))) {
     return"green"
   }else {
-    if(cljs.core.truth_(pred__6236.call(null, "fail", expr__6237))) {
+    if(cljs.core.truth_(pred__6423.call(null, "fail", expr__6424))) {
       return"red"
     }else {
-      throw new Error([cljs.core.str("No matching clause: "), cljs.core.str(expr__6237)].join(""));
+      throw new Error([cljs.core.str("No matching clause: "), cljs.core.str(expr__6424)].join(""));
     }
   }
 };
-runread.core.build_project_html = function build_project_html(data) {
+run.core.build_project_html = function build_project_html(data) {
   var main_div = domina.xpath.xpath.call(null, "//div[@id\x3d'main']");
-  return domina.append_BANG_.call(null, main_div, [cljs.core.str('\x3cdiv class\x3d"row"\x3e\n                                 \x3cdiv title\x3d"build" class\x3d"small-4 columns '), cljs.core.str(runread.core.convert_status.call(null, cljs.core.get.call(null, data, "status"))), cljs.core.str('"\x3e\x3ca href\x3d"#" onclick\x3d"runread.core.showtest(\''), cljs.core.str(cljs.core.get.call(null, data, "project")), cljs.core.str("','"), cljs.core.str(cljs.core.get.call(null, data, "buildnr")), cljs.core.str("');\"\x3e"), 
+  return domina.append_BANG_.call(null, main_div, [cljs.core.str('\x3cdiv class\x3d"row"\x3e\n                                 \x3cdiv title\x3d"build" class\x3d"small-4 columns '), cljs.core.str(run.core.convert_status.call(null, cljs.core.get.call(null, data, "status"))), cljs.core.str('"\x3e\x3ca href\x3d"#" onclick\x3d"run.core.showtest(\''), cljs.core.str(cljs.core.get.call(null, data, "project")), cljs.core.str("','"), cljs.core.str(cljs.core.get.call(null, data, "buildnr")), cljs.core.str("');\"\x3e"), 
   cljs.core.str(cljs.core.get.call(null, data, "buildnr")), cljs.core.str("\x3c/a\x3e\x3c/div\x3e")].join(""))
 };
-runread.core.handler2 = function handler2(response) {
+run.core.handler2 = function handler2(response) {
   domina.destroy_children_BANG_.call(null, domina.xpath.xpath.call(null, "//div[@id\x3d'main']"));
-  cljs.core.mapv.call(null, function(p1__6239_SHARP_) {
-    return runread.core.build_project_html.call(null, p1__6239_SHARP_)
+  cljs.core.mapv.call(null, function(p1__6426_SHARP_) {
+    return run.core.build_project_html.call(null, p1__6426_SHARP_)
   }, response);
   return console.log([cljs.core.str(response)].join(""))
 };
-runread.core.projectread = function projectread() {
+run.core.projectread = function projectread() {
   var p = window.location.search;
   var p__$1 = cljs.core.second.call(null, clojure.string.split.call(null, p, /=/));
-  return ajax.core.GET.call(null, [cljs.core.str("/runread/project/"), cljs.core.str(p__$1)].join(""), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "handler", "handler", 1706707644), runread.core.handler2, new cljs.core.Keyword(null, "error-handler", "error-handler", 1866823671), runread.core.error_handler, new cljs.core.Keyword(null, "response-format", "response-format", 4250805877), new cljs.core.Keyword(null, "json", "json", 1017176154)], null))
+  return ajax.core.GET.call(null, [cljs.core.str("/run/project/"), cljs.core.str(p__$1)].join(""), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "handler", "handler", 1706707644), run.core.handler2, new cljs.core.Keyword(null, "error-handler", "error-handler", 1866823671), run.core.error_handler, new cljs.core.Keyword(null, "response-format", "response-format", 4250805877), new cljs.core.Keyword(null, "json", "json", 1017176154)], null))
 };
-goog.exportSymbol("runread.core.projectread", runread.core.projectread);
-runread.core.handler3 = function handler3(response) {
+goog.exportSymbol("run.core.projectread", run.core.projectread);
+run.core.handler3 = function handler3(response) {
   domina.destroy_children_BANG_.call(null, domina.xpath.xpath.call(null, "//div[@id\x3d'mainbig']"));
   domina.append_BANG_.call(null, domina.xpath.xpath.call(null, "//div[@id\x3d'mainbig']"), [cljs.core.str('\x3cdiv class\x3d"row"\x3e'), cljs.core.str(cljs.core.get.call(null, response, "test")), cljs.core.str("\x3c/div\x3e")].join(""));
   return console.log(cljs.core.get.call(null, response, "test"))
 };
-runread.core.showtest = function showtest(project, buildnr) {
-  return ajax.core.GET.call(null, [cljs.core.str("/runread/showtest/"), cljs.core.str(project), cljs.core.str("/"), cljs.core.str(buildnr)].join(""), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "handler", "handler", 1706707644), runread.core.handler3, new cljs.core.Keyword(null, "error-handler", "error-handler", 1866823671), runread.core.error_handler, new cljs.core.Keyword(null, "response-format", "response-format", 4250805877), new cljs.core.Keyword(null, "json", "json", 
-  1017176154)], null))
+run.core.showtest = function showtest(project, buildnr) {
+  return ajax.core.GET.call(null, [cljs.core.str("/run/showtest/"), cljs.core.str(project), cljs.core.str("/"), cljs.core.str(buildnr)].join(""), new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null, "handler", "handler", 1706707644), run.core.handler3, new cljs.core.Keyword(null, "error-handler", "error-handler", 1866823671), run.core.error_handler, new cljs.core.Keyword(null, "response-format", "response-format", 4250805877), new cljs.core.Keyword(null, "json", "json", 1017176154)], 
+  null))
 };
-goog.exportSymbol("runread.core.showtest", runread.core.showtest);
-runread.core.forcebuild = function forcebuild(project) {
-  return ajax.core.GET.call(null, [cljs.core.str("/runread/forcebuild/"), cljs.core.str(project)].join(""), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "error-handler", "error-handler", 1866823671), runread.core.error_handler, new cljs.core.Keyword(null, "response-format", "response-format", 4250805877), new cljs.core.Keyword(null, "json", "json", 1017176154)], null))
+goog.exportSymbol("run.core.showtest", run.core.showtest);
+run.core.forcebuild = function forcebuild(project) {
+  return ajax.core.GET.call(null, [cljs.core.str("/run/forcebuild/"), cljs.core.str(project)].join(""), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "error-handler", "error-handler", 1866823671), run.core.error_handler, new cljs.core.Keyword(null, "response-format", "response-format", 4250805877), new cljs.core.Keyword(null, "json", "json", 1017176154)], null))
 };
-goog.exportSymbol("runread.core.forcebuild", runread.core.forcebuild);
-runread.core.forcedeploy = function forcedeploy(project, env) {
-  return ajax.core.GET.call(null, [cljs.core.str("/runread/forcedeploy/"), cljs.core.str(project), cljs.core.str("/"), cljs.core.str(env)].join(""), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "error-handler", "error-handler", 1866823671), runread.core.error_handler, new cljs.core.Keyword(null, "response-format", "response-format", 4250805877), new cljs.core.Keyword(null, "json", "json", 1017176154)], null))
+goog.exportSymbol("run.core.forcebuild", run.core.forcebuild);
+run.core.forcedeploy = function forcedeploy(project, env) {
+  return ajax.core.GET.call(null, [cljs.core.str("/run/forcedeploy/"), cljs.core.str(project), cljs.core.str("/"), cljs.core.str(env)].join(""), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "error-handler", "error-handler", 1866823671), run.core.error_handler, new cljs.core.Keyword(null, "response-format", "response-format", 4250805877), new cljs.core.Keyword(null, "json", "json", 1017176154)], null))
 };
-goog.exportSymbol("runread.core.forcedeploy", runread.core.forcedeploy);
+goog.exportSymbol("run.core.forcedeploy", run.core.forcedeploy);

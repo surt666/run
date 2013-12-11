@@ -1,6 +1,6 @@
-(ns runread.routes
+(ns run.routes
   (:use compojure.core
-        runread.core)
+        run.core)
   (:require [compojure.route :as route]
             [compojure.handler :as handler]
             [clojure.tools.logging :as logging]
